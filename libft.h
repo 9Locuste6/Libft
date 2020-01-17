@@ -17,6 +17,11 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <errno.h>
+# include <limits.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
+# endif
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
