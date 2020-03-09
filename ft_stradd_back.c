@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcat_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_stradd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gorban <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/14 18:35:13 by gorban            #+#    #+#             */
-/*   Updated: 2019/10/14 18:53:57 by gorban           ###   ########.fr       */
+/*   Created: 2020/02/03 12:12:53 by gorban            #+#    #+#             */
+/*   Updated: 2020/02/03 12:12:56 by gorban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_memcat(char *string, char *buf, int string_size, int buf_size)
+char	**ft_stradd_back(char **strs, char *new, int size)
 {
-	int		i;
-	char	*string2;
+	int 	i;
+	char	**newstrs;
 
-	if (!(string2 = malloc(sizeof(char) * (string_size + buf_size + 1))))
-		return (NULL);
+	if (!new)
+		return (0);
+	if (!(newstrs = malloc(sizeof(char *) * (size + 1))))
+		return (0);
 	i = 0;
-	while (i < string_size)
+	while (i < size)
 	{
-		string2[i] = string[i];
+		newstrs[i] = strs[i];
 		i++;
 	}
-	free(string);
-	while (i < string_size + buf_size)
-	{
-		string2[i] = buf[i - string_size];
-		i++;
-	}
-	string2[i] = '\0';
-	return (string2);
+	newstrs[i] = new;
+	if (strs)
+		free(strs);
+	return (newstrs);
 }
