@@ -86,5 +86,6 @@ char			*ft_ultoa_base(unsigned long long nbr, char *base);
 int				ft_intlen(long long nbr);
 int				ft_freeturn(char **data, int value);
 int				get_next_line(int fd, char **line);
+char			**ft_stradd_back(char **strs, char *new, int size);
 
 #endif
