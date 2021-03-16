@@ -45,7 +45,7 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 char			*ft_strnstr(const char *haystack, const char *needle,
-		size_t len);
+							size_t len);
 int				ft_atoi(const char *str);
 void			*ft_calloc(size_t count, size_t size);
 char			*ft_strdup(const char *s1);
@@ -78,9 +78,13 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*));
 
 char			*ft_memcat(char *string, char *buf, int string_size,
 		int buf_size);
-void			ft_sort(int *tab, int size);
+void			ft_bubblesort(int *tab, int n);
+void			ft_selectionsort(int *tab, int n);
+void			ft_insertionsort(int *tab, int n);
+void			ft_shellsort(int *tab, int n);
 void			ft_swap(int *a, int *b);
 void			ft_rev_int_tab(int *tab, int size);
+int				ft_abs(int nbr);
 int				ft_sqrt(int nb);
 char			*ft_ultoa_base(unsigned long long nbr, char *base);
 int				ft_intlen(long long nbr);

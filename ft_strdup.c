@@ -14,13 +14,13 @@
 
 char	*ft_strdup(const char *s1)
 {
-	int 	x;
+	int		x;
 	int		size;
 	char	*copy;
 
-	x = O;
+	x = 0;
 	size = ft_strlen(s1);
-	if (!(copy = malloc(sizeof(char) * x + 1)))
+	if (!(copy = malloc(sizeof(char) * (size + 1))))
 		return (0);
 	while (x < size)
 	{

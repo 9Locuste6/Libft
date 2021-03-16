@@ -14,13 +14,16 @@
 
 char	**ft_stradd_back(char **strs, char *new, int size)
 {
-	int 	i;
+	int		i;
 	char	**newstrs;
 
 	if (!new)
 		return (0);
 	if (!(newstrs = malloc(sizeof(char *) * (size + 1))))
+	{
+		free(new);
 		return (0);
+	}
 	i = 0;
 	while (i < size)
 	{

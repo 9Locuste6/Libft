@@ -1,21 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gorban <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/21 16:02:40 by gorban            #+#    #+#             */
-/*   Updated: 2019/11/26 15:12:34 by gorban           ###   ########.fr       */
+/*   Created: 2019/10/14 19:03:30 by gorban            #+#    #+#             */
+/*   Updated: 2019/10/14 19:57:27 by gorban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <stdio.h>
+#include "libft.h"
 
-int	main(void)
+void	ft_bubblesort(int *tab, int n)
 {
-	ft_printf("Hello world!");
+	int	a;
+	int	tmp;
 
-	return (19);
+	while (n > 1)
+	{
+		a = 0;
+		tmp = tab[a];
+		while (a + 1 < n)
+		{
+			if (tmp > tab[a + 1])
+				tab[a] = tab[a + 1];
+			else
+			{
+				tab[a] = tmp;
+				tmp = tab[a + 1];
+			}
+			a++;
+		}
+		tab[a] = tmp;
+		n--;
+	}
+	return ;
 }
